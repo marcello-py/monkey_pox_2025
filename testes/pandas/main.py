@@ -1,0 +1,32 @@
+# %%
+import pandas as pd
+import csv
+# %%
+data = [
+    ["Date", "Product", "Category", "Price", "Quantity", "Total", "City"],
+    ["2024-01-01", "Laptop", "Electronics", 1000, 2, 2000, "New York"],
+    ["2024-01-02", "Phone", "Electronics", 800, 3, 2400, "Los Angeles"],
+    ["2024-01-03", "Desk", "Furniture", 150, 4, 600, "Chicago"],
+    ["2024-01-04", "Chair", "Furniture", 100, 6, 600, "Houston"],
+    ["2024-01-05", "Pen", "Stationery", 2, 50, 100, "Miami"],
+    ["2024-01-06", "Notebook", "Stationery", 5, 30, 150, "New York"],
+    ["2024-01-07", "Mouse", "Electronics", 20, 10, 200, "Los Angeles"],
+    ["2024-01-08", "Monitor", "Electronics", 200, 5, 1000, "Chicago"],
+    ["2024-01-09", "Table", "Furniture", 300, 2, 600, "Houston"],
+    ["2024-01-10", "Book", "Stationery", 10, 15, 150, "Miami"]
+]
+
+
+with open('sales_data.csv', 'w', newline='') as file:
+    fieldnames = ['Date','Product','Category','Price','Quantity','Total','City']
+    writer = csv.writer(file)
+    writer.writerows(data)
+# %%
+type(data)
+# %%
+df = pd.read_csv('sales_data.csv')
+df.head()
+
+ # %%
+series = pd.Series(data)
+type(data)
